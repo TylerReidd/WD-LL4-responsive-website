@@ -1,16 +1,67 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>LiveLab 4 Demo</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
-</head>
-
-<body>
-  Hello world
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nomadiq Travel Destinations</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Lato&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css">
   <script src="script.js"></script>
-</body>
+</head>
+<body>
 
+  <header class="site-header">
+    <div class="logo">charity: water</div>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">&#9776;</button>
+    <nav class="nav-menu" id="navMenu">
+      <a href="#">Home</a>
+      <a href="#">Destinations</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+<section class="hero">
+  <div class="hero-content">
+    <h1>Clean Water with a Clear Purpose.</h1>
+    <p>Your donation helps to bring clean, life-saving water to the communities who need it most.</p>
+    <button class="cta-btn">Give</button>
+  </div>
+</section>
+
+  <section>
+    <h2 class="section-title">Full Visibility Into Your Impact</h2>
+    <div class="impact-section">
+      <div class="impact-card">
+        <img src="images/5017_Ethiopia_2019_CG-.jpg" alt="Clean water being poured" />
+        <p>Access to clean water and basic sanitation can save around 16,000 lives every week.</p>
+      </div>
+      <div class="impact-card">
+        <img src="images/7255_Ethiopia_2019_CG-.jpg" alt="Mother and child near well" />
+        <p>Women and girls are responsible for water collection in 8 out of 10 households.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="pledge-section">
+    <div class="outer-pledge">
+      <div class="pledge-box">
+        <h2>Every Drop Counts</h2>
+        <p>Make A Pledge</p>
+        <input type="text" placeholder="Enter your name or amount" />
+        <button>Join Today</button>
+      </div>
+    </div>
+  </section>
+
+
+  <script>
+    const navToggle = document.getElementById('navToggle');
+    const navMenu = document.getElementById('navMenu');
+    navToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+  </script>
+
+</body>
 </html>
