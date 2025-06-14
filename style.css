@@ -48,7 +48,7 @@ body {
       display: flex;
     }
 
-    /* @media (min-width: 768px) {
+    @media (min-width: 768px) {
       .site-header {
         flex-direction: row;
         align-items: center;
@@ -70,7 +70,7 @@ body {
         border: none;
         padding: 0;
       }
-    } */
+    }
 
     .hero {
   display: flex;
@@ -108,18 +108,6 @@ body {
   color: #fff;
 }
 
-/* .cta-btn {
-  background: #ffc107;
-  height: 45px;
-  width: 65px;
-  color: black;
-  padding: 0.75rem 1.5rem;
-  border: none;
-  font-weight: bold;
-  font-family: 'Montserrat', sans-serif;
-  cursor: pointer;
-  border-radius: 5px;
-} */
 
 .button-wrapper {
   width: 100%;
@@ -265,6 +253,38 @@ body {
     .pledge-box button:hover {
       background: #e6a600;
     }
+
+    .pledge-layout {
+      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      width: 100%;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .payment-icons {
+      display: flex;
+      padding:0;
+      flex-direction: column;
+      align-items: center; 
+      justify-content: center;
+      gap: 1.5rem;
+      /* padding-right: 1rem; */
+    }
+
+    .payment-icons img {
+      width: 200px;
+      height: auto;
+      border-radius: 15px;
+      object-fit: contain;
+      display: block;
+    }
+
+
+    
 
     .subheading {
       text-align: center;
