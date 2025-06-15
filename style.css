@@ -1,78 +1,70 @@
 body {
-      margin: 0;
-      font-family: 'Lato', sans-serif;
-      background: #fef9f4;
-      color: #333;
-    }
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+    background: #fef9f4;
+    color: #333;
+  }
 
-    .site-header {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      padding: 1rem;
-      background-color: #e0f2f1;
-      font-family: 'Nunito', sans-serif;
-    }
+.site-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1rem;
+  background-color: #e0f2f1;
+  font-family: 'Nunito', sans-serif;
+}
 
-    .logo {
-      font-size: 1.5rem;
-      font-weight: bold;
-      margin-bottom: 0.5rem;
-    }
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
 
-    .nav-toggle {
-      background: none;
-      border: none;
-      font-size: 1.5rem;
-      cursor: pointer;
-      margin-bottom: 0.5rem;
-      display: block;
-    }
+.nav-toggle {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-bottom: 0.5rem;
+  display: block;
+}
 
-    .nav-menu {
-      display: none;
-      flex-direction: column;
-      gap: 0.5rem;
-      width: 100%;
-    }
+.nav-menu {
+  display: none;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
 
-    .nav-menu a {
-      text-decoration: none;
-      color: #00695c;
-      padding: 0.5rem 0;
-      font-weight: 500;
-      border-bottom: 1px solid #b2dfdb;
-    }
+.nav-menu a {
+  position: relative;
+  overflow: hidden;
+  transition: color 0.3s ease;
+}
 
-    .nav-menu.active {
-      display: flex;
-    }
+.nav-menu a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background-color: #00695c;
+  transition: width 0.3s ease;
+}
 
-    @media (min-width: 768px) {
-      .site-header {
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-      }
+.nav-menu a:hover::after {
+  width: 100%;
+}
 
-      .nav-toggle {
-        display: none;
-      }
 
-      .nav-menu {
-        display: flex !important;
-        flex-direction: row;
-        gap: 2rem;
-        width: auto;
-      }
+.nav-menu.active {
+  display: flex;
+}
 
-      .nav-menu a {
-        border: none;
-        padding: 0;
-      }
-    }
 
-    .hero {
+
+.hero {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -85,7 +77,7 @@ body {
 
 .hero-content {
   max-width: 500px;
-  background: rgba(0, 0, 0, 0.4); /* keeps text readable over image */
+  background: rgba(0, 0, 0, 0.2); /* keeps text readable over image */
   padding: 2rem;
   border-radius: 8px;
   display: flex;
@@ -132,224 +124,212 @@ body {
 }
 
 
-    .section-title {
-      text-align: center;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 1.5rem;
-      margin: 2rem 0 1rem;
-    }
+.section-title {
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+  margin: 2rem 0 1rem;
+}
 
-    .impact-section {
-      display: flex;
-      height: 700px;
-      background:#fff6ea;
-      justify-content: center;
-      align-items: center;
-      padding: 2rem;
-      gap: 1.5rem;
-    }
+.impact-section {
+  display: flex;
+  height: 700px;
+  background:#fff6ea;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  gap: 1.5rem;
+}
 
-    .impact-card {
-      background: white;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      max-width: 500px;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
+.impact-card {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  max-width: 500px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
 
-    .impact-card img {
-      width: 100%;
-      height: 550px; /* Or whatever fixed height you want */
-      object-fit: cover;
-      border-top-left-radius: 8px;
-      border-top-right-radius: 8px;
-    }
+.impact-card img {
+  width: 100%;
+  height: 550px; /* Or whatever fixed height you want */
+  object-fit: cover;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
 
-    .impact-card p {
-      padding: 1rem;
-      font-size: 1.3rem;
-    }
+.impact-card p {
+  padding: 1rem;
+  font-size: 1.3rem;
+}
+
+.impact-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+
+.pledge-section {
+  background:#fff6ea; /* or #ffeb3b if you want a softer yellow */
+  height: 600px;
+  padding: 4rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.outer-pledge {
+  background: #ffc107;
+  border-radius: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 650px;
+  padding: 6rem 2rem;      
+  min-height: 500px; 
+  width: 100%;
+  margin: 0 auto;
+}
+
+
+.pledge-box {
+  background: #cfcfd1;
+  padding: 3rem 2rem;
+  border-radius: 2rem;
+  max-width: 500px; 
+  height: 350px;
+  width: 90%;        /* added: gives it flexibility on smaller screens */
+  text-align: center;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+
+.pledge-box h2 {
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 0.5rem;
+  font-size: 1.8rem;
+}
+
+.pledge-box p {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.pledge-box input {
+  width: 100%;
+  max-width: 280px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom:15px;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  display: block;
+}
+
+
+.pledge-box button {
+  background: #ffc907;
+  color: black;
+  padding: 0.75rem 1.5rem;
+  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  width: 200px;
+  height:50px;
+  transition: background 0.2s ease;
+}
+
+.pledge-box button:hover {
+  background: #e6a600;
+}
+
+.pledge-layout {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.payment-icons {
+  display: flex;
+  padding:0;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.payment-icons img {
+  width: 200px;
+  height: auto;
+  border-radius: 15px;
+  object-fit: contain;
+  display: block;
+}
+
+.subheading {
+  text-align: center;
+  margin: 2rem 0;
+  font-size: 1rem;
+}
+
+.cta-btn,
+.pledge-box button {
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+
+.cta-btn:hover,
+.pledge-box button:hover {
+    transform: scale(1.05);
+}
+
+
+  /* Mobile Response */
+
+@media (min-width: 1000px) {
+  .site-header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-toggle {
+    display: none;
+  }
+
+  .nav-menu {
+    display: flex !important;
+    flex-direction: row;
+    gap: 2rem;
+    width: auto;
+  }
+
+  .nav-menu a {
+    border: none;
+    padding: 0;
+  }
 
     .pledge-section {
-      background:#fff6ea; /* or #ffeb3b if you want a softer yellow */
-      height: 600px;
-      padding: 4rem 2rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .outer-pledge {
-      background: #ffc107;
-      border-radius: 2rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      max-width: 650px;
-      padding: 6rem 2rem;      
-      min-height: 500px; 
-      width: 100%;
-      margin: 0 auto;
-    }
-
-
-    .pledge-box {
-      background: #cfcfd1;
-      padding: 3rem 2rem;
-      border-radius: 2rem;
-      max-width: 500px; 
-      height: 350px;
-      width: 90%;        /* added: gives it flexibility on smaller screens */
-      text-align: center;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-    }
-
-
-    .pledge-box h2 {
-      font-family: 'Montserrat', sans-serif;
-      margin-bottom: 0.5rem;
-      font-size: 1.8rem;
-    }
-
-    .pledge-box p {
-      font-size: 1rem;
-      margin-bottom: 1.5rem;
-      color: #333;
-    }
-
-      .pledge-box input {
-      width: 100%;
-      max-width: 280px;
-       margin-left: auto;
-      margin-right: auto;
-      margin-bottom:15px;
-      padding: 0.75rem;
-      font-size: 1rem;
-      border-radius: 10px;
-      border: 1px solid #ccc;
-      display: block;
-    }
-
-
-    .pledge-box button {
-      background: #ffc907;
-      color: black;
-      padding: 0.75rem 1.5rem;
-      font-weight: bold;
-      font-family: 'Montserrat', sans-serif;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      width: 200px;
-      height:50px;
-      transition: background 0.2s ease;
-    }
-
-    .pledge-box button:hover {
-      background: #e6a600;
-    }
-
-    .pledge-layout {
-      box-sizing: border-box;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 2rem;
-      width: 100%;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    .payment-icons {
-      display: flex;
-      padding:0;
-      flex-direction: column;
-      align-items: center; 
-      justify-content: center;
-      gap: 1.5rem;
-      /* padding-right: 1rem; */
-    }
-
-    .payment-icons img {
-      width: 200px;
-      height: auto;
-      border-radius: 15px;
-      object-fit: contain;
-      display: block;
-    }
-
-
-    
-
-    .subheading {
-      text-align: center;
-      margin: 2rem 0;
-      font-size: 1rem;
-    }
-
-    /* Mobile Response */
-
-    @media (min-width: 768px) {
-  .pledge-section {
     padding: 6rem 2rem;
   }
 }
 
-    @media (max-width: 768px) {
-  .hero {
-    padding: 2rem 1rem;
-    min-height: auto;
-  }
 
-  .hero-content h1 {
-    font-size: 2rem;
-  }
-
-  .hero-content p {
-    font-size: 1rem;
-  }
-
-  .impact-section {
-    padding: 1.5rem 1rem;
-    gap: 1.5rem;
-  }
-
-  .impact-card {
-    max-width: 100%;
-  }
-
-  .pledge-section {
-    padding: 3rem 1rem;
-  }
-
-  .pledge-box {
-    padding: 2rem 1rem;
-  }
-
-  .pledge-box h2 {
-    font-size: 1.5rem;
-  }
-
-  .pledge-box input,
-  .pledge-box button {
-    font-size: 1rem;
-  }
-
-  .cta-btn {
-    width: 100%;
-    font-size: 1rem;
-  }
-
-  .nav-menu a {
-    font-size: 1rem;
-  }
-}
-@media (max-width: 768px) {
+@media (max-width: 1300px) {
   body {
     overflow-x: hidden;
   }
@@ -392,15 +372,38 @@ body {
     width: 100%;
   }
 
-  .hero {
-    height: auto;
-    min-height: 80vh;
-    background-position: center center;
+   .hero {
+    justify-content: flex-start;
+    align-items: flex-end;
+    padding: 2rem 1rem;
+    background-position: center top;
   }
 
-  .hero-content {
-    margin-left: 0;
-    width: 100%;
-    padding: 1.5rem;
+   .hero-content {
+    max-width: 80%;
+    background:transparent;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 1rem 1rem;
+    border-radius: 10px;
+    align-items: center;
+    text-align: center;
+    transform: none;
+    margin: 0 0 2rem 1rem; /* push it to the bottom left */
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .hero-content p {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+ .cta-btn {
+    width: 150px;
+    height: 60px;
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
   }
 }
