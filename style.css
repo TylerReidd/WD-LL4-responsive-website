@@ -378,6 +378,8 @@ body {
     align-items: flex-end;
     padding: 2rem 1rem;
     background-position: center top;
+    height: 70vh;
+    width: auto;
   }
 
    .hero-content {
